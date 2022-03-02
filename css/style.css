@@ -1,0 +1,156 @@
+/* Variables */
+:root{
+    /* Color Primarios */
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    /* Color Secundarios */
+    --Ver-dark-blue-main-BG: hsl(217, 54%, 11%);
+    --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+    /* Tipografia */
+    --font-family: 'Outfit', sans-serif;
+}
+
+/* Generales */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+
+.view{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--Ver-dark-blue-main-BG);
+    color: var(--White);
+    padding: 25px 8px 25px 8px;
+    min-width: 280px;
+}
+
+.view .container{
+    background-color: var(--Very-dark-blue-card-BG);
+    width: 100%;
+    max-width: 340px; 
+    max-height: 580px;
+    padding: 22px;
+    border-radius: 15px;
+    margin-bottom: 15px;   
+    box-shadow: 0 20px 0px 15px rgba(12, 22, 39, 0.712), 0 20px 0px 40px rgba(13, 23, 43, 0.856);
+}
+
+.container__imagen{
+    position: relative;
+    cursor: pointer;
+    font-size: 0;
+}
+
+.view .container  .container__imagen .nft{
+    width: 100%;
+    border-radius: 7px;
+}
+
+.view .container  .container__descripcion h1{
+   font-size: 22px;
+   margin: 20px 0px 18px 0px;
+   font-weight: 600;
+   cursor: pointer;
+}
+
+.view .container  .container__descripcion p{
+    font-size: 18px;
+    color: var(--Soft-blue);
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 22px;
+ }
+
+.view .container .container__detalles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 22px;
+}
+
+.view .container .container__detalles--precio, 
+.view .container .container__detalles--tiempo{
+    display: flex;
+}
+
+.view .container .container__detalles--precio p{
+    color: var(--Cyan);
+    margin-left: 8px;
+}
+
+.view .container .container__detalles--tiempo p{
+    color: var(--Soft-blue);
+    margin-left: 8px;
+}
+
+.view .container .container__creditos {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--Very-dark-blue-line);
+    padding: 15px 0px;
+}
+
+.view .container .container__creditos img{
+    width: 35px;
+    border-radius: 50%;
+    border: 1px solid var(--White);
+}
+
+.view .container .container__creditos p{
+    margin-left: 16px;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.view .container .container__creditos span{
+    color: var(--Soft-blue);
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* Overlay */
+.view .container .container__imagen .container__overlay{
+    background-color: hsla(178, 100%, 50%, 0.450);;
+    position: absolute;
+    top: 0;
+    border-radius: 7px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.view .container .container__imagen .container__overlay img{
+    width: 45px;
+}
+
+/* Hover */
+.view .container .container__creditos p:hover,
+.view .container  .container__descripcion h1:hover{
+    color: var(--Cyan);
+}
+
+.view .container .container__imagen .container__overlay:hover{
+    opacity: 1;
+}
+
